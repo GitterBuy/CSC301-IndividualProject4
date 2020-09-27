@@ -6,4 +6,8 @@
     "target": "es5",
     "types": [
       "jasmine",
-      "jasminewd2"
+      "jasminewd2",
+      "node"
+    ]
+  }
+}
