@@ -33,4 +33,28 @@ export class Data {
     FullName: string;
     Description: string;
     AssetTokenStatus: string;
-  
+    Algorithm: string;
+    ProofType: string;
+    SortOrder: string;
+    Sponsored: boolean;
+    Taxonomy: Taxonomy;
+    Rating: Rating;
+    IsTrading: boolean;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ApiServiceService {
+
+  private api: string = environment.api;
+
+  constructor(
+    private http: HttpClient,
+    ) { }
+
+
+  public getValues(): Observable<any> {
+    return this.http.get<any>(`${this.api}/coins/search`);
+  }
+}
