@@ -1,4 +1,21 @@
 <!-- <a [routerLink]="['/bookmarks']">
     link to bookmarks</a> -->
 <div class="margin-top" title="press enter to search">
-    <input #searchInput placeholder="search " class="styled-input" (keyup.enter)="search(searchInput
+    <input #searchInput placeholder="search " class="styled-input" (keyup.enter)="search(searchInput.value)" />
+</div>
+<div *ngIf="loading">LOADING...</div>
+<div>
+    <div class="cls1">
+        <ul *ngIf="DisplayedResults">
+            <li *ngFor="let rep of DisplayedResults ">
+                <button (click)="open(rep)">{{rep[1].fullName}} </button>
+                <!-- <img [src]="rep.owner.avatar_url " /> -->
+                <!-- <button (click)="save(rep)">bookmark</button> -->
+            </li>
+
+        </ul>
+    </div>
+    <div *ngIf="clicked" class="location">
+        <div>
+            <p>
+                <span>{{selected[1].name | uppe
