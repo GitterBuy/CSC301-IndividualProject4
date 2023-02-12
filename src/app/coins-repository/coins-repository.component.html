@@ -18,4 +18,15 @@
     <div *ngIf="clicked" class="location">
         <div>
             <p>
-                <span>{{selected[1].name | uppe
+                <span>{{selected[1].name | uppercase }}</span>
+                <br/>
+                <span>id: {{selected[1].id}}</span>
+                <br/>
+                <span>{{selected[1].coinName}}</span>
+                <br/>
+                <span>{{selected[1].algorithm | uppercase }}</span>
+                <!-- <img [src]="selected[1].imageUrl " /> -->
+            </p>
+        </div>
+    </div>
+</div>
